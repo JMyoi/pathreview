@@ -46,3 +46,35 @@ Ran the exact repro snippet from the issue against `ResumeParser.parse()` on ind
 
 **Blockers or open questions:**
 [Anything you're still uncertain about going into Week 9, or leave blank]
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+Implemented the fix from PLAN.md step 1: all four regex patterns in `_detect_sections()` (ingestion/parsers/resume_parser.py) now allow `[ \t]*` leading whitespace after the `^`/`\n` anchor. Confirmed via `git stash` comparison that this resolves exactly the 3 named failing tests from the issue plus `test_detect_sections`, with no regressions elsewhere in the file.
+
+**Next steps:**
+Add explicit edge-case tests per PLAN.md's "Edge cases" section (leading spaces, leading tabs, no-whitespace regression, mid-sentence false-positive guard, empty string), then run `make test-unit` and `make check` to confirm no new failures before opening the PR.
+
+**Blockers:**
+None.
+
+---
+
+### Check-in 2 (end of week)
+
+**PR link:** [link to your submitted pull request]
+
+**Branch:** `fix/147-Resume-detection-fails-leading-whitespace`
+
+**What you built:**
+Updated the four section-header regex patterns in `_detect_sections()` to tolerate leading spaces/tabs (`[ \t]*` after the `^`/`\n` anchor), so indented section headers — the common case for PDF-extracted resume text — are now correctly recognized instead of silently returning an empty `detected_sections` list.
+
+**Tests added or updated:**
+`tests/unit/test_resume_parser.py` — no existing tests needed edits (the fix made them pass as-is); added 5 new tests: `test_detect_sections_with_leading_spaces`, `test_detect_sections_with_leading_tabs`, `test_detect_sections_no_leading_whitespace_still_works` (regression guard), `test_detect_sections_no_false_positive_mid_sentence`, and `test_detect_sections_empty_string`.
+
+**Self-review confirmation:** [x] make check passes  [x] make test-unit passes
+(Both commands surface pre-existing, unrelated failures documented in the PR description; my changes introduce zero new failures in either — confirmed via before/after `git stash` comparison.)
+
+**Draft PR feedback received from:** none
