@@ -78,3 +78,45 @@ Updated the four section-header regex patterns in `_detect_sections()` to tolera
 (Both commands surface pre-existing, unrelated failures documented in the PR description; my changes introduce zero new failures in either — confirmed via before/after `git stash` comparison.)
 
 **Draft PR feedback received from:** none
+
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [] Yes  [x] No — still awaiting review
+
+**Summary of feedback:**
+[What did reviewers comment on? Or note that no review came in.]
+
+**How you responded:**
+[What changes did you make, or what did you reply? If no feedback,
+leave blank.]
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+[Be specific — what part of the process, codebase, or workflow
+surprised you?]
+harder than expected is going through and trying to understand and breakdown the large codebase, also writing all the plans and journals were a bit tedious before actually working on the issue.
+
+**What did you learn about working in a large codebase?**
+[What's different about contributing to someone else's production code
+vs. building your own project?]
+There are standards and specific rules you have to follow to collaborate in different codebases. 
+
+**How did AI tools help — and where did they fall short?**
+[Where was AI assistance most useful this module? Where did you need
+to go beyond what AI could give you?]
+AI tools helped me navigate the codebase and also break down the issue and underlying bugs and problems and helped me find a solution to the issue.
+
+**What would you do differently if you started over?**
+[Issue selection, planning, implementation, or process — anything
+you'd change?]
+not much I would change.
+
+**What are you most proud of from this module?**
+[One thing — it doesn't have to be the PR itself.]
+Practicing industry best standards and going through all steps for collaboration.
